@@ -13,35 +13,9 @@ public class Delivery {
     private String courier_phone;
     private String customer_email;
     private String customer_phone;
+    private String address;
 	private Date date;
 	private String status;
-	private String address;
-	private String city;
-	private String company_name;
-
-    public String getCompanyName() {
-        return company_name;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.company_name = companyName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public Delivery() {
 		// Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -104,12 +78,12 @@ public class Delivery {
     }
 
     public String getDate() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        return dateFormat.format(this.date);
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh:mm");
+            return dateFormat.format(this.date);
     }
 
     public void setDate(String date) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh:mm");
         try {
             this.date = dateFormat.parse(date);
         } catch (ParseException e) {
@@ -117,4 +91,11 @@ public class Delivery {
         }
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
